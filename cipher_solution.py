@@ -1,4 +1,4 @@
-# 141908380 - ID посылки
+# 141908481 - ID посылки
 import sys
 from string import digits, ascii_letters
 
@@ -14,8 +14,7 @@ def perform_decryption(line: list):
         elif value in digits:
             digit += value
         elif value == '[':
-            recursion_result = perform_decryption(line)
-            temp += int(digit) * recursion_result
+            temp += int(digit) * perform_decryption(line)
             digit = ''
         elif value == ']':
             return temp
